@@ -26,12 +26,12 @@ function handleMath(req, res) {
    const mailType = req.query.mailType;
    const weight = req.query.weight;
 
-   console.log('Mail Type: ' + mailType);
-   console.log('Weight: ' + weight);
+   // console.log('Mail Type: ' + mailType);
+   // console.log('Weight: ' + weight);
 
    // res.write("<h1>Math Page</h1>");
    // res.end();
-
+   computeOperation(res, mailType, weight);
 }
 
 function computeOperation(res, mailType, weight) {
