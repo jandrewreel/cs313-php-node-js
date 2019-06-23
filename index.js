@@ -39,5 +39,5 @@ function computeOperation(res, mailType, weight) {
 
    const params = {mailType: mailType, weight: weight};
 
-   res.render('pages/result', params);
+   res.render('pages/results', params);
 }
