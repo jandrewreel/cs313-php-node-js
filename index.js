@@ -34,6 +34,30 @@ function computeOperation(res, mailType, weight) {
    //Set Cost
    let cost = 0;
 
+   if (mailType == "Letters (Stamped)") {
+      if (weight < 1) {
+         cost = .55;
+      }
+      else if (1 < weight < 2) {
+         cost = .70;
+      }
+      else if (2 < weight < 3) {
+         cost = .85;
+      }
+      else if (3 < weight < 3.5) {
+         cost = 1.00;
+      }
+   }
+   else if (mailType == "Letters (Metered)") {
+      cost = 2.00;
+   }
+   else if (mailType == "Large Envelopes") {
+      cost = 3.00;
+   }
+   else if (mailType == "First-Class Package Service--Retail") {
+      cost = 4.00;
+   }
+
    //Collect Variables
    const params = {mailType: mailType, weight: weight, cost: cost};
 
