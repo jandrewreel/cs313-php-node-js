@@ -34,6 +34,7 @@ function computeOperation(res, mailType, weight) {
    //Set Cost
    let cost = 0;
 
+   //Calculate Cost
    if (mailType == "Letters (Stamped)") {
       if (weight < 1) {
          cost = .55;
