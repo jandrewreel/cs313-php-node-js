@@ -35,9 +35,9 @@ function handleMath(req, res) {
 }
 
 function computeOperation(res, mailType, weight) {
-   let result = 0;
+   let cost = 0;
 
-   const params = {mailType: mailType, weight: weight};
+   const params = {mailType: mailType, weight: weight, cost: cost};
 
    res.render('pages/results', params);
 }
