@@ -1,3 +1,4 @@
+//Set up the Server
 const express = require('express')
 const path = require('path')
 const port = process.env.PORT || 5000
@@ -6,11 +7,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-//   .get('/', (req, res) => res.render('pages/index'))
 
-// set up a rule that says requests to "/math" should be handled by the
-// handleMath function below
-app.get('/math', handleMath);
+//Handle Form Request
+app.get('/form', handleForm);
 
 // start the server listening
 app.listen(port, function() {
@@ -22,22 +21,22 @@ app.listen(port, function() {
 /*******************************************
 * Program Functions
 *******************************************/
-function handleMath(req, res) {
+function handleForm(req, res) {
+   //Get Variables
    const mailType = req.query.mailType;
    const weight = req.query.weight;
 
-   // console.log('Mail Type: ' + mailType);
-   // console.log('Weight: ' + weight);
-
-   // res.write("<h1>Math Page</h1>");
-   // res.end();
+   //Pass Variables
    computeOperation(res, mailType, weight);
 }
 
 function computeOperation(res, mailType, weight) {
+   //Set Cost
    let cost = 0;
 
+   //Collect Variables
    const params = {mailType: mailType, weight: weight, cost: cost};
 
+   //Pass results in
    res.render('pages/results', params);
 }
