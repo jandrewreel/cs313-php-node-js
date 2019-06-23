@@ -56,7 +56,7 @@ function computeOperation(res, mailType, weight) {
       else if (1 < weight < 2) {
          cost = .65;
       }
-      else if (2 < weight <) {}
+      else if (2 < weight < 3) {}
    }
    else if (mailType == "Large Envelopes") {
       cost = 3.00;
