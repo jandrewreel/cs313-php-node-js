@@ -35,34 +35,42 @@ function computeOperation(res, mailType, weight) {
    let cost = 0;
 
    if (mailType == "Letters (Stamped)") {
-      // if (weight < 1) {
-      //    cost = .55;
-      // }
-      // else if (1 < weight < 2) {
-      //    cost = .70;
-      // }
-      // else if (2 < weight < 3) {
-      //    cost = .85;
-      // }
-      // else if (3 < weight < 3.5) {
-      //    cost = 1.00;
-      // }
-      cost = (.55 + (weight * .15));
+      if (weight < 1) {
+         cost = .55;
+      }
+      else {
+         cost = (.55 + (weight * .15));
+      }
    }
    else if (mailType == "Letters (Metered)") {
       if (weight < 1) {
-         cost = .5;
+         cost = .50;
       }
-      else if (1 < weight < 2) {
-         cost = .65;
+      else {
+         cost = (.50 + (weight * .15));
       }
-      else if (2 < weight < 3) {}
    }
    else if (mailType == "Large Envelopes") {
-      cost = 3.00;
+      if (weight < 1) {
+         cost = 1.00;
+      }
+      else {
+         cost = (1.00 + (weight * .15));
+      }
    }
    else if (mailType == "First-Class Package Service--Retail") {
-      cost = 4.00;
+      if (weight < 1) {
+         cost = 4.06;
+      }
+      else if (4 < weight < 9) {
+         cost = 4.81;
+      }
+      else if (9 < weight < 13) {
+         cost = 5.66;
+      }
+      else if (13 < weight) {
+         cost = 6.27;
+      }
    }
 
    //Collect Variables
